@@ -1,4 +1,4 @@
-        // GenAI Jungle Quest Game with Integrated Form Submission
+// GenAI Jungle Quest Game with Integrated Form Submission
         
         console.log('GenAI Jungle Quest script started');
         
@@ -16,7 +16,32 @@
             questionsAnswered: 0,
             factIsLeft: false,
             demonAppeared: false,
-            formSubmitted: false
+            formSubmitted: false,
+            // Background images for different scenes
+            backgroundImages: [
+                {
+                    desktop: 'assets/images/jungle_main_2_roads_16_9.png',
+                    mobile: 'assets/images/jungle_main_2_roads_mobile.png'
+                },
+                {
+                    desktop: 'assets/images/jungle_scene2_16_9.png',
+                    mobile: 'assets/images/jungle_scene2_mobile.png'
+                },
+                {
+                    desktop: 'assets/images/jungle_scene3_16_9.png',
+                    mobile: 'assets/images/jungle_scene3_mobile.png'
+                },
+                {
+                    desktop: 'assets/images/jungle_scene4_16_9.png',
+                    mobile: 'assets/images/jungle_scene4_mobile.png'
+                },
+                {
+                    desktop: 'assets/images/jungle_scene5_16_9.png',
+                    mobile: 'assets/images/jungle_scene5_mobile.png'
+                },
+                // Add more background images as needed
+                // If there are more questions than backgrounds, we'll cycle through them
+            ]
         };
         
         // Local storage key for scores
@@ -163,6 +188,36 @@
             loadQuestion();
         }
         
+        // Update background images based on current question
+        function updateBackgroundImages() {
+            // Calculate which background to use
+            // We'll cycle through the backgrounds if we have more questions than backgrounds
+            const backgroundIndex = gameState.currentQuestionIndex % gameState.backgroundImages.length;
+            const currentBackground = gameState.backgroundImages[backgroundIndex];
+            
+            // Update desktop background
+            const desktopBg = document.querySelector('.jungle-background-desktop');
+            if (desktopBg && currentBackground.desktop) {
+                desktopBg.src = currentBackground.desktop;
+            }
+            
+            // Update mobile background
+            const mobileBg = document.querySelector('.jungle-background-mobile');
+            if (mobileBg && currentBackground.mobile) {
+                mobileBg.src = currentBackground.mobile;
+            }
+            
+            // Add a small fade-in animation for transition effect
+            const allBgs = document.querySelectorAll('.jungle-background');
+            allBgs.forEach(bg => {
+                bg.style.opacity = '0';
+                setTimeout(() => {
+                    bg.style.transition = 'opacity 0.5s ease-in-out';
+                    bg.style.opacity = '1';
+                }, 50);
+            });
+        }
+        
         // Load question
         function loadQuestion() {
             const question = gameState.questions[gameState.currentQuestionIndex];
@@ -177,6 +232,9 @@
             // Update score and lives display
             document.getElementById('score-container').textContent = `Score: ${gameState.score}`;
             document.getElementById('lives-container').textContent = `Lives: ${Array(gameState.lives).fill('❤️').join('')}`;
+            
+            // Update background images for this question
+            updateBackgroundImages();
         }
         
         // Select answer
