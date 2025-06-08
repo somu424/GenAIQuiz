@@ -1,2 +1,2 @@
 # GenAIQuiz
-GenAI Quiz
+GenAI day game
