@@ -20,27 +20,45 @@
             // Background images for different scenes
             backgroundImages: [
                 {
-                    desktop: 'assets/images/jungle_main_2_roads_16_9.png',
-                    mobile: 'assets/images/jungle_main_2_roads_mobile.png'
+                    desktop: 'assets/images/Scene1.png',
+                    mobile: 'assets/images/Scene1.png'
                 },
                 {
-                    desktop: 'assets/images/jungle_scene2_16_9.png',
-                    mobile: 'assets/images/jungle_scene2_mobile.png'
+                    desktop: 'assets/images/Scene2.png',
+                    mobile: 'assets/images/Scene2.png'
                 },
                 {
-                    desktop: 'assets/images/jungle_scene3_16_9.png',
-                    mobile: 'assets/images/jungle_scene3_mobile.png'
+                    desktop: 'assets/images/Scene3.png',
+                    mobile: 'assets/images/Scene3.png'
                 },
                 {
-                    desktop: 'assets/images/jungle_scene4_16_9.png',
-                    mobile: 'assets/images/jungle_scene4_mobile.png'
+                    desktop: 'assets/images/Scene4.png',
+                    mobile: 'assets/images/Scene4.png'
                 },
                 {
-                    desktop: 'assets/images/jungle_scene5_16_9.png',
-                    mobile: 'assets/images/jungle_scene5_mobile.png'
+                    desktop: 'assets/images/Scene5.png',
+                    mobile: 'assets/images/Scene5.png'
                 },
-                // Add more background images as needed
-                // If there are more questions than backgrounds, we'll cycle through them
+                {
+                    desktop: 'assets/images/Scene6.png',
+                    mobile: 'assets/images/Scene6.png'
+                },
+                {
+                    desktop: 'assets/images/Scene7.png',
+                    mobile: 'assets/images/Scene7.png'
+                },
+                {
+                    desktop: 'assets/images/Scene8.png',
+                    mobile: 'assets/images/Scene8.png'
+                },
+                {
+                    desktop: 'assets/images/Scene9.png',
+                    mobile: 'assets/images/Scene9.png'
+                },
+                {
+                    desktop: 'assets/images/Scene10.png',
+                    mobile: 'assets/images/Scene10.png'
+                }
             ]
         };
         
